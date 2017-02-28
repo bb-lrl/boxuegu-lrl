@@ -14,7 +14,7 @@
     <div class="main">
         <div class="container-fluid">
             <!-- 头部 -->
-            <?php include('./html/common/header.html') ?>
+            <?php include('../common/header.html') ?>
             <!-- 讲师资料 -->
             <div class="body teacher-profile">
                 <div class="settings">
@@ -104,8 +104,10 @@
                         </div>
                         <div class="form-group">
                             <div class="col-xs-8">
-                                <a href="./course_add_step2.html" class="btn btn-success btn-sm pull-right">保 存</a>
-                                <a href="./repass.html" class="btn btn-link btn-sm pull-right">更改密码？</a>
+                                <input type="submit" class="btn btn-success btn-sm pull-right" value="保 存">
+
+                                <!--<a href="../course/add_step2.html" class="btn btn-success btn-sm pull-right">保 存</a>-->
+                                <a href="repass.html" class="btn btn-link btn-sm pull-right">更改密码？</a>
                             </div>
                         </div>
                     </form>
@@ -115,6 +117,5 @@
     </div>
 
     <?php include('../common/script.html') ?>
-
 </body>
 </html>
