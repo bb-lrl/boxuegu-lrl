@@ -1,7 +1,17 @@
 /**
  * Created by linruilian on 2017/2/26.
  */
-define(['jquery','jqueryCookie'],function($){
+define(['jquery','jqueryCookie'],function($,undefined){
+
+// ajax请求loading
+    $(document).ajaxStart(function(){
+        $('.overlay').show();
+    }).ajaxStop(function(){
+        $('.overlay').hide();
+    });
+
+
+// 左侧导航下拉列表
     $('.navs a').on('click',function(){
         $(this).next().slideToggle();
     });
@@ -25,7 +35,9 @@ define(['jquery','jqueryCookie'],function($){
            if(data.code == 200) {
                location.href = '/html/home/login.html';
            }
+           console.log('11145')
        });
+
    });
     // 获取本地cookie用户信息，同时做容错处理
     var userInfo = null;
