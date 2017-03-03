@@ -10,11 +10,9 @@ requirejs.config({
         jqueryCookie:'lib/jquery-cookie/jquery.cookie',
         nprogress:'lib/nprogress/nprogress',
         template:'lib/artTemplate-3.0.1/template',
+        datepicker:'lib/bootstrap-datepicker/js/bootstrap-datepicker',
+        datepickerLanguage:'lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         // 自己写的路径配置
-        // userList:'js/user/list',
-        // userProfile:'js/user/profile',
-        // common:'js/common/common',
-        // login:'js/home/login'
         courseAddStep1: 'js/course/add_step1',
         courseAddStep2: 'js/course/add_step2',
         courseAddStep3: 'js/course/add_step3',
@@ -30,6 +28,7 @@ requirejs.config({
         teacherList: 'js/teacher/list',
         userList: 'js/user/list',
         userProfile: 'js/user/profile',
+        util: 'js/common/util',
         common: 'js/common/common',
         index: 'js/index'
 
@@ -37,7 +36,10 @@ requirejs.config({
     shim:{
         bootstrap:{
             deps:
-                ['jquery']
+                ['jquery','datepicker']
+        },
+        datepickerLanguage:{
+            deps: ['jquery', 'datepicker']
         }
     }
 });
@@ -122,6 +124,7 @@ require(['jquery','bootstrap','common']);
             case '/html/home/settings.html':
                 require(['homeSettings']);
                 break;
+
             case '/':
                 require(['index']);
                 break;
